@@ -8,7 +8,7 @@ Ref: [Tweet from KatyCodes]( https://twitter.com/KatyCodesStuff/status/144346335
 
 Other than that, it might be the case someone uses Twitter to look at what's going on daily in some specific field. As for my work, I need to see what content is being circulated on Twitter and what's a trend in Kubernetes communities. My Bot helps other followers and me with the purpose of being updated with Kubernetes.
 
-"Hi Hrittik, The Bot is very useful. It gives me relevant content for me to share and gain new connections. I primarily use twitter to spread the word on my opensource project "kube-fledged". And definitely your Bot helps in this goal. Thanks, Senthil. 😀" - @senthilrch, Principal SW Engineer @ericsson
+___"Hi Hrittik, The Bot is very useful. It gives me relevant content for me to share and gain new connections. I primarily use twitter to spread the word on my opensource project "kube-fledged". And definitely your Bot helps in this goal. Thanks, Senthil. 😀"___ - _@senthilrch, Principal SW Engineer @ericsson_
 
 
 
@@ -24,11 +24,17 @@ With the code and access tokens taken care of, the run function works similarly 
 
 ![Architecture](https://raw.githubusercontent.com/hrittikhere/awsgraviton_twitter/main/static/ec2.png)
 
+
 ## Challenges we ran into
 The First challenge was building something that just doesn't RTs hashtags. This is important because the promotions use hashtags more than ordinary people. Queries often go unnoticed because they missed the hashtag part. A lot of time was invested writing compact code and focusing on strings rather than hashtags. 
 I focused on creating a compact base and code that's small instead of very big code and hard for people to understand. I used a lot of function calls to achieve this. 
+
 Next, the big challenge was to deploy it, but it wasn't possible via GitHub actions because of the limited number of minutes per month. Self hosted runner was an option but GitHub doesn't support aarch64 architecture as of the time of the hackathon. I experimented with Docker because of Graviton, but it wasn't that efficient when I thought of the future plans and accumulated feedback. 
+
 So, the cron solution works excellent currently, and it can scale to more bots. More details about it  in the lateral sections.
+```
+0 */4 * * * python3 /home/ubuntu/austin_castel/my_twitter_bot.py >> /home/ubuntu/log/log.txt
+```
 
 ## Accomplishments that we're proud of
 1.	Participating in my first hackathon and submitting a project in the 'hacker' way
@@ -41,8 +47,8 @@ So, the cron solution works excellent currently, and it can scale to more bots. 
 There's a huge demand for targeted bots. Like one of the followers puts it:
 
 
-"Your Bot is awesome Thumbs upClapping hands sign
- It helped me focussing only on the content I want to see i.e Kubernetes. If possible do same for terraform. That's the only feedback I have for now. But I will surely give more over the time. Thanks" - @SagarJadhv23, Software Engineer IBM
+___"Your Bot is awesome Thumbs upClapping hands sign
+ It helped me focussing only on the content I want to see i.e Kubernetes. If possible do same for terraform. That's the only feedback I have for now. But I will surely give more over the time. Thanks"__ - @SagarJadhv23, Software Engineer IBM_
 
 Also, cron jobs on Linux are more potent than it seems at the surface. I enjoyed learning Linux and empowering my application on Linux. 
 Also, thanks to AWS for the credits to experiment with cloud. I learned how to SSH on a VM using private keys, deploy software there, and treat it as my cloud computer. I am also looking to get an AWS  practitioner certification for myself in future :D 
