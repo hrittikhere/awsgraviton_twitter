@@ -22,6 +22,8 @@ The Bot is built using python with the help of the tweepy,  socks and other libr
 So, to run the Bot we need the libraries, Twitter tokens and the code. We take care of the code in the previous stage and the tokens are already securely uploaded on the VM's code repository. We protect the access tokens by keeping the file (tokens.py) in .gitignore. 
 With the code and access tokens taken care of, the run function works similarly to how the code is remotely pulled, i.e., via cron jobs on Graviton every four hours.
 
+![Architecture](https://raw.githubusercontent.com/hrittikhere/awsgraviton_twitter/main/static/ec2.png)
+
 ## Challenges we ran into
 The First challenge was building something that just doesn't RTs hashtags. This is important because the promotions use hashtags more than ordinary people. Queries often go unnoticed because they missed the hashtag part. A lot of time was invested writing compact code and focusing on strings rather than hashtags. 
 I focused on creating a compact base and code that's small instead of very big code and hard for people to understand. I used a lot of function calls to achieve this. 
