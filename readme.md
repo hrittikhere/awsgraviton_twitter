@@ -20,7 +20,7 @@ It's periodic by intention because I like to open Twitter and get updated at a s
 The Bot is built using python with the help of the tweepy,  socks and other libraries. It's hosted on GitHub. The code is pulled from the remote repository periodically without you needing to access the machine. Any time you update the code on github, it's pulled via cron jobs in 1 min, and the updated code becomes the backend.
 ### Secure Run
 So, to run the Bot we need the libraries, Twitter tokens and the code. We take care of the code in the previous stage and the tokens are already securely uploaded on the VM's code repository. We protect the access tokens by keeping the file (tokens.py) in .gitignore. 
-With the code and access tokens taken care of, the run function works similarly to how the code is remotely pulled, i.e., via cron jobs on Graviton every four hours.
+With the code and access tokens taken care of, the run function works similarly to how the code is remotely pulled, i.e., via cron jobs on Graviton X2gD (Lowest $/GIB of RAM) every four hours.
 
 ![Architecture](https://raw.githubusercontent.com/hrittikhere/awsgraviton_twitter/main/static/ec2.png)
 
@@ -55,5 +55,5 @@ Also, thanks to AWS for the credits to experiment with cloud. I learned how to S
 
 ## What's next for AWS Graviton, GitHub and Twitter Bot
 The plan for the Bot would be to create replicas for different niches like Terraform and AWS. But, I need to refine the algorithm a bit to not RT content with similar hashtags. I have plans to implement that in a couple of weeks.
-The best part of using Graviton EC2 is that I don't need to deploy more VMs, even if I have ten bots focusing on 10 niches. It's just a line of code on crontab, and my Bot would run and help more people. So, I plan to scale the number of my bots, and if I win, Graviton is very compute-intensive at a low cost and it will support me to scale.
+The best part of using Graviton EC2 is that I don't need to deploy more VMs, even if I have ten bots focusing on 10 niches. It's just a line of code on crontab, and my Bot would run and help more people. So, I plan to scale the number of my bots, and if I win, Graviton is very compute-intensive at a low cost (Eg: X2gD with Lowest $/GIB of RAM) and it will support me to scale.
   
