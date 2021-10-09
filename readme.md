@@ -29,7 +29,7 @@ With the code and access tokens taken care of, the run function works similarly 
 The First challenge was building something that just doesn't RTs hashtags. This is important because the promotions use hashtags more than ordinary people. Queries often go unnoticed because they missed the hashtag part. A lot of time was invested writing compact code and focusing on strings rather than hashtags. 
 I focused on creating a compact base and code that's small instead of very big code and hard for people to understand. I used a lot of function calls to achieve this. 
 
-Next, the big challenge was to deploy it, but it wasn't possible via GitHub actions because of the limited number of minutes per month. Self hosted runner was an option but GitHub Runners aren't the reliable and sometimes go down and you're bombarded with notification for Failed Pipeline. Another disadvantage of the approach is [python package isn't available for the ARM architecture currently](https://downloads.python.org/pypy/versions.json). I experimented with Docker because of Graviton, but it wasn't that efficient when I thought of the future plans and accumulated feedback. 
+Next, the big challenge was to deploy it, but it wasn't possible via GitHub actions because of the limited number of minutes per month. Self hosted runner was an option but GitHub Runners aren't the reliable and sometimes go down and you're bombarded with notification for Failed Pipeline. I experimented with Docker because of Graviton, but it wasn't that efficient when I thought of the future plans and accumulated feedback. 
 
 So, the cron solution works excellent currently, and it can scale to more bots. More details about it  in the lateral sections.
 ```
